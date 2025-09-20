@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default async function productsPage() {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/products`
+    `https://ecommerce.routemisr.com/api/v1/products`
   );
   const data: ProductsData = await response.json();
   const productsList: productList[] = data.data;
