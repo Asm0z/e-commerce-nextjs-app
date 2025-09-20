@@ -8,7 +8,7 @@ export async function checkoutPayment(
   const token = await getUserToken();
   if (token) {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/orders/checkout-session/${cartId}?url=${process.env.NEXT_URL}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/orders/checkout-session/${cartId}?url=${process.env.NEXT_PUBLIC_URL}`,
       {
         method: "POST",
         body: JSON.stringify({
