@@ -1,3 +1,5 @@
+export type OrderResponse = OrderData[];
+
 export interface OrderData {
     shippingAddress:   ShippingAddress;
     taxPrice:          number;

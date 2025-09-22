@@ -23,6 +23,7 @@ export default function Navbar() {
     { path: "/", label: "Home", protected: false },
     { path: "/category", label: "Category", protected: false },
     { path: "/products", label: "Products", protected: false },
+    { path: "/Brands", label: "Brands", protected: false },
     { path: "/allorders", label: "Orders", protected: true },
   ];
 

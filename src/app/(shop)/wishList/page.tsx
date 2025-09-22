@@ -34,7 +34,8 @@ export default function WishList() {
         duration: 2500,
         position: "top-center",
       });
-      setWish(data.data);
+      // setWish(data.data);
+      setWish((prevWish) => prevWish.filter((item) => item._id !== id));
     } else {
       toast.error("An Error Occurred", {
         duration: 2500,
@@ -83,7 +84,7 @@ export default function WishList() {
                         <div className="flex justify-between items-center">
                           <h4>{product?.price} EG</h4>
                           <h4>
-                            <i className="fa-solid fa-star text-orange-400"></i>{" "}
+                            <i className="fa-solid fa-star text-orange-400"></i>
                             {product?.ratingsAverage}
                           </h4>
                         </div>

@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
       </div>
       <div className=" max-w-full bg-blue-900 py-4 md:px-40 text-center text-white">
-        <h3>Copyright © Online Store 2021</h3>
+        <h3>Copyright © Online Store 2025</h3>
       </div>
     </>
   );

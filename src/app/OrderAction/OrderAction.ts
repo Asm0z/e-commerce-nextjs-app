@@ -1,5 +1,7 @@
 "use server";
 import { getUserToken } from "@/getUserToken";
+import { OrderData } from "@/types/orders.type";
+import { getCartData } from "../CartActions/AddToCard.action";
 
 export async function checkoutPayment(
   cartId: string,
@@ -20,7 +22,17 @@ export async function checkoutPayment(
         },
       }
     );
-    const data = await response.json()
-    return data
+    const data = await response.json();
+    return data;
   }
+}
+
+export default async function getOrdersData() {
+  const cartData = await getCartData();
+  const cartOwnerId = cartData.data.cartOwner;
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/orders/user/${cartOwnerId}`
+  );
+  const data: OrderData[] = await response.json();
+  return data;
 }
