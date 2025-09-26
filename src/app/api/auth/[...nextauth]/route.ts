@@ -2,7 +2,7 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { jwtDecode } from "jwt-decode";
 
-export const nextOptions: NextAuthOptions = {
+const nextOptions: NextAuthOptions = {
   pages: {
     signIn: "/login",
   },
