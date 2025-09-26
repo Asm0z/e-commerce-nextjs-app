@@ -9,7 +9,7 @@ export default async function productDetailsPage({
 }: {
   params: { id: string };
 }) {
-  const { id } = await params;
+  const { id } = params;
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/products/${id}`
   );
