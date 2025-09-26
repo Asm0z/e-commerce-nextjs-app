@@ -4,12 +4,8 @@ import ProductDetailsSlider from "@/app/_Component/ProductDetailsSlider/ProductD
 import { ProductDetails, productItem } from "@/types/productDetails.type";
 import React from "react";
 
-export default async function productDetailsPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const { id } = params;
+export default async function productDetailsPage({params}: {params: Promise<{id:string}>}) {
+  const { id } = await params;
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/products/${id}`
   );
