@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default async function Home() {
   const response = await fetch(
-    `${process.env.Next_Public_Base_URL}/api/v1/products`
+    `${process.env.Next_Base_URL}/api/v1/products`
   );
   const data: ProductsData = await response.json();
   const productsList: productList[] = data.data;

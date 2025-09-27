@@ -7,7 +7,7 @@ import React from "react";
 export default async function productDetailsPage({params}: {params: Promise<{id:string}>}) {
   const { id } = await params;
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/products/${id}`
+    `${process.env.NEXT_BASE_URL}/api/v1/products/${id}`
   );
   const data: ProductDetails = await response.json();
   const product: productItem = data.data;
