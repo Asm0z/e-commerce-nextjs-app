@@ -8,21 +8,28 @@ export default function AddWishList({ id }: { id: string }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
   async function addWishList(id: string) {
-    setIsLoading(true);
-    const data = await AddToWishList(id);
-    if (data.status === "success") {
-      toast.success(data.message, {
+    try {
+      setIsLoading(true);
+      const data = await AddToWishList(id);
+      if (data.status === "success") {
+        toast.success(data.message, {
+          duration: 2500,
+          position: "top-center",
+        });
+        setIsAdded(true);
+      } else {
+        toast.error(data.message, {
+          duration: 2500,
+          position: "top-center",
+        });
+      }
+    } catch {
+      toast.error("Login to add products to your wishlist", {
         duration: 2500,
         position: "top-center",
       });
-      setIsAdded(true);
-    } else {
-      toast.error(data.message, {
-        duration: 2500,
-        position: "top-center",
-      });
+      setIsLoading(false);
     }
-    setIsLoading(false);
   }
   return (
     <div>

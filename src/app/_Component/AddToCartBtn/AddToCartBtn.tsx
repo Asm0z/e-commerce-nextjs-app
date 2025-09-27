@@ -25,9 +25,12 @@ export default function AddToCartBtn({ id }: { id: string }) {
         position: "top-center",
       });
     }
+  }catch{
+    toast.error("Login to add products to your cart", {
+      duration: 2500,
+      position: "top-center",
+    })
     setIsLoading(false);
-    }catch{
-      toast.error("Login to add products to your cart")
     }
   }
   return (
