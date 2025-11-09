@@ -26,7 +26,7 @@ export default function ProductsCard({ product }: { product: productList}) {
             className="w-full h-72 object-cover rounded-t-2xl"
           />
           <h4 className="text-start  text-pink-700">{name}</h4>
-          <h3 className=" text-blue-900 text-start ">{title}</h3>
+          <h3 className=" text-blue-900 text-start line-clamp-1">{title}</h3>
         </div>
       </Link>
       <div className="flex justify-between items-center">
